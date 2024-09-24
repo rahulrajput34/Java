@@ -1,0 +1,27 @@
+// Question - Convert each string to uppercase
+public class string_13 {
+    public static String uppercaseFirst( String str){
+        
+        StringBuilder sb = new StringBuilder("");
+        // to uppercase any charactar.
+        char ch = Character.toUpperCase(str.charAt(0));
+        sb.append(ch);
+
+        for(int i = 1; i < str.length(); i++){
+            if(str.charAt(i) == ' ' && i < str.length() - 1){  // if there is a space at the end of the string that is why we gave && i < str.length() - 1...
+                sb.append(str.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(str.charAt(i)));
+            } else {
+                sb.append(str.charAt(i));
+            }
+            
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        String str = "hi my name is rahul rajput";
+        System.out.println(uppercaseFirst(str));
+
+    }
+}
